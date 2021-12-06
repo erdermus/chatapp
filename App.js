@@ -1,9 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, LogBox } from 'react-native';
 import { useAssets } from 'expo-asset';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
+
+LogBox.ignoreLogs([
+  "Setting a timer",
+  "AsyncStorage has been extracted from react-native core and will be removed in a future release.",
+])
 
 function App() {
   const [currentUser , setCurrentUser] = useState(null);
