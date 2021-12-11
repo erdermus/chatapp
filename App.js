@@ -6,6 +6,7 @@ import { auth } from './firebase';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import SignIn from './screens/SignIn';
+import ContextWrapper from './context/ContextWrapper';
 
 LogBox.ignoreLogs([
   "Setting a timer",
@@ -55,7 +56,7 @@ function Main() {
   if(!assets) {
     return <Text>loading ...</Text>
   }
-  return <App />
+  return <ContextWrapper><App /></ContextWrapper>
 }
 
 export default Main
